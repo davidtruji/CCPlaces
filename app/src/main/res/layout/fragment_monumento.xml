@@ -38,12 +38,16 @@
             android:layout_height="wrap_content"
             android:text="Caceres" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Favorito" />
+        <ToggleButton
+            android:id="@+id/button_favorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/button_fav"
+            android:checked="false"
+            android:text=""
+            android:textOff=""
+            android:textOn=""/>
+
     </LinearLayout>
 
     <ScrollView

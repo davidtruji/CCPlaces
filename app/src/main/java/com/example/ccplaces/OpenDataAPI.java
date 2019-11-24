@@ -17,8 +17,8 @@ public class OpenDataAPI {
 
         JSONObject jsonObject;
         JSONArray jsonArray;
-        String nombreMonumento,desc,tipo;
-        Long lat=0L,lon=0L;
+        String nombreMonumento,desc,tipo,lat,lon;
+
 
         try {
             jsonObject = result.getJSONObject("results");
@@ -27,10 +27,10 @@ public class OpenDataAPI {
             for(int i=0; i< jsonArray.length();i++){
                 nombreMonumento  = jsonArray.getJSONObject(i).getJSONObject("rdfs_label").getString("value");
                 tipo= jsonArray.getJSONObject(i).getJSONObject("om_tipoMonumento").getString("value");
-                //lat= Long.valueOf(jsonArray.getJSONObject(i).getJSONObject("geo_lat").getString("value"));
-                //lon= Long.valueOf(jsonArray.getJSONObject(i).getJSONObject("geo_long").getString("value"));
-                monumentoArrayList.add(new Monumento(nombreMonumento,tipo,"desc",null,lat,lon));
-                Log.i(TAG," Creado: "+nombreMonumento+" - "+tipo+" - "+lat.toString()+" "+lon.toString());
+                lat= jsonArray.getJSONObject(i).getJSONObject("geo_lat").getString("value");
+                lon= jsonArray.getJSONObject(i).getJSONObject("geo_long").getString("value");
+                monumentoArrayList.add(new Monumento(nombreMonumento,tipo,"desc",null,Double.valueOf(lat),Double.valueOf(lon)));
+                Log.i(TAG," Creado: "+nombreMonumento+" - "+tipo+" - "+lat+" "+lon);
             }
 
         } catch (JSONException e) {

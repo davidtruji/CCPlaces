@@ -27,7 +27,7 @@ import java.util.ArrayList;
  */
 public class PuntosInteresFragment extends Fragment {
 
-    private ArrayList<Monumento> listaMonumentos=new ArrayList<>();
+    private ArrayList<Monumento> listaMonumentos=Datos.getInstance().getPuntosIneres();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -45,7 +45,7 @@ public class PuntosInteresFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_puntos_interes, container, false);
-        new GetMonumentos().execute();
+       new GetMonumentos().execute();
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_pdi);
 
@@ -57,6 +57,9 @@ public class PuntosInteresFragment extends Fragment {
         layoutManager = new GridLayoutManager(this.getContext(),3);
         recyclerView.setLayoutManager(layoutManager);
 
+
+        mAdapter = new PuntoInteresAdapter(listaMonumentos);
+        recyclerView.setAdapter(mAdapter);
 //        // specify an adapter (see also next example)
 //        mAdapter = new PuntoInteresAdapter(listaMonumentos);
 //        recyclerView.setAdapter(mAdapter);
@@ -84,6 +87,8 @@ public class PuntosInteresFragment extends Fragment {
     private class GetMonumentos extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog progressDialog;
+        ArrayList<Monumento> puntosIneres=Datos.getInstance().getPuntosIneres();
+
 
         @Override
         protected void onPreExecute() {
@@ -91,7 +96,7 @@ public class PuntosInteresFragment extends Fragment {
             listaMonumentos.clear();
             progressDialog = ProgressDialog.show(getActivity(),
                     "Descargando espere...",
-                    "Datos proporcionados por Google Places");
+                    "Datos proporcionados por OpenDataAPI");
         }
 
         @Override
@@ -101,7 +106,7 @@ public class PuntosInteresFragment extends Fragment {
                 JSONObject jsonObject = Network.getJSONObjectFromURL(Network.URL_OPENDATA);
                 OpenDataAPI.getMonumentosFromJSON(jsonObject,listaMonumentos);
             }catch (Exception e){
-
+                e.printStackTrace();
             }
             return null;
         }

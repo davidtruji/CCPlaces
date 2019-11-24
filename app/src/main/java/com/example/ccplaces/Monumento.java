@@ -4,6 +4,8 @@ import android.graphics.Bitmap;
 
 import androidx.annotation.NonNull;
 
+import java.util.Objects;
+
 //public enum tipoMonumento{
 //Iglesia,Casa,Torre
 //}
@@ -16,15 +18,15 @@ public class Monumento {
     private String tipo;
     private String desc;
     private Bitmap foto;
-    private long lat;
-    private long lon;
+    private Double lat;
+    private Double lon;
 
 
     public Monumento(String nombre) {
         this.nombre = nombre;
     }
 
-    public Monumento(String nombre, String tipo, String desc, Bitmap foto, long lat, long lon) {
+    public Monumento(String nombre, String tipo, String desc, Bitmap foto, Double lat, Double lon) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.desc = desc;
@@ -57,19 +59,19 @@ public class Monumento {
         this.foto = foto;
     }
 
-    public long getLat() {
+    public Double getLat() {
         return lat;
     }
 
-    public void setLat(long lat) {
+    public void setLat(Double lat) {
         this.lat = lat;
     }
 
-    public long getLon() {
+    public Double getLon() {
         return lon;
     }
 
-    public void setLon(long lon) {
+    public void setLon(Double lon) {
         this.lon = lon;
     }
 
@@ -86,5 +88,18 @@ public class Monumento {
     @Override
     public String toString() {
         return nombre;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Monumento monumento = (Monumento) o;
+        return Objects.equals(nombre, monumento.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre);
     }
 }

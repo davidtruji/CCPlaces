@@ -70,12 +70,9 @@ public class PuntoInteresAdapter extends  RecyclerView.Adapter<PuntoInteresAdapt
     public  void onItemClick(View v,int i){
         Toast.makeText(v.getContext(),"Click: "+mDataset.get(i).toString(), Toast.LENGTH_LONG).show();
         Bundle bundle = new Bundle();
-        bundle.putString("nombre", mDataset.get(i).toString());
+        bundle.putInt("index", i);
         //Navigation.findNavController(view).navigate(R.id.confirmationAction, bundle);
-
         Navigation.findNavController(v).navigate(R.id.action_nav_puntos_interes_to_nav_detalle_monumento,bundle);
-
-
     }
 
 

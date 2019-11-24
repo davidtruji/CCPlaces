@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">Cáceres Places</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Cáceres Places</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="array_descripciones">
+        <item>
+
+El Arco de la Estrella, entrada tradicional a la Ciudad Monumental de Cáceres, vino a sustituir a la Puerta Nueva construcción del siglo XV. Une la Plaza Mayor con la Plaza de Santa María ambas centros neurálgicos de la ciudad durante siglos.
+
+De estilo barroco, fue construido por Manuel de Larra Churriguera en el siglo XVIII sobre una construcción del siglo XV, es un arco rebajado de gran amplitud y en esviaje, hecho de esta forma para facilitar el paso de los carruajes a la Ciudad Monumental. Está construido mediante perforación de la muralla, que conserva su almenaje. En la parte posterior hay un templete en el que está la estatua de la Virgen de la Estrella que le da el nombre al arco. Está considerado como la puerta más importante de la Ciudad Monumental, ya que fue el lugar elegido por la Reina Católica para jurar los Fueros y privilegios en 1477, también en este mismo arco juró los Fueros a la ciudad el rey Fernando «El Católico» en 1479. También recibe el nombre de Puerta Nueva, por ser la última puerta construida en la muralla.
+</item>
+        <item>El nombre de la torre parece que puede venir de \'Abu Yaacub\', el nombre del califa Abu Yaacub Yúsuf, cuyas tropas recuperaron la ciudad en 1173, acabando con la vida de los caballeros que la defendían (Frates de Cáceres). Aunque quizás la explicación más probable es que puede venir de la palabra buhaco (muñeco de paja o muñeco de trapo), haciendo referencia cómo llamaban los habitantes de Cáceres a la estatua de la diosa Ceres que estuvo colocada en la torre desde principios del siglo XIX. Antes también se la conocía como la Torre del Reloj, ya que hasta finales del siglo XVIII tuvo un reloj instalado en el muro que mira a la plaza (el reloj que ahora se encuentra en el campanario de la Iglesia de San Mateo).</item>
+        <item>La Torre de los Púlpitos es la única torre construida por los cristianos tras la toma definitiva de la ciudad. Todas las demás formaban parte de la muralla almohade. Se construyó para reforzar la defensa de la Puerta Nueva, que no existía en la muralla original. El nombre viene del parecido de las troneras con los púlpitos de las iglesias. </item>
+        <item>En la Plaza de Santa María destaca el edificio de la Iglesia-Concatedral de Santa María (10), construida entre los siglos XV y XVI (torre del campanario), que combina rasgos de estilo románico con transición al gótico y detalles renacentistas en la torre y en el coro. La iglesia actual se construyó como ampliación de una iglesia románica más pequeña que se levantó a comienzos del siglo XIII. En la esquina que da a la plaza se encuentra la estatua de San Pedro de Alcántara, obra de Enrique Pérez Comendador. </item>
+        <item>En la parte central de la plaza encontramos el Palacio de Mayoralgo (14), construido entre los siglos XIV y XV, con una fachada posterior del siglo XVI (reformada a mediados del siglo XX) en la que destaca el arco de medio punto y el escudo de la familia Mayoralgo. Debajo del escudo hay una inscripción en latín: “Sé Tú, Señor, para nosotros, torre de fortaleza; y se renovará, como la del águila, nuestra juventud”, que hace referencia a los emblemas del escudo (águila y torre).</item>
+        <item>Popularmente conocido como “Palacio de las Cigüeñas”, fue ordenada su edificación en el siglo XV por D. Diego de Cáceres Ovando.
+Su fachada se compone de una puerta con largas dovelas en arco de medio punto, y sobre ésta, una ventana en arco conopial flanqueada por dos escudos con las armas de Ovando y Mogollón, todo ello enmarcado por un alfiz quebrado, con dos ventanas geminadas de arcos túmidos y mainel en mármol gris.
+Destaca la torre por su gran altura. Es de planta cuadrada, con sillares graníticos en los ángulos y cuerpo superior saliente sujeto por ménsulas y coronado por almenas. Es la única torre que no sufrió el desmochamiento ordenado por la Reina Isabel la Católica.
+En su interior tiene un patio flanqueado por cuatro galerías con columnas con arcos rebajados en planta baja y geminados con clave colgante en la parte superior. De este patio sale una escalera, que da acceso a la torre y que se abre en abanico alrededor de una pilastra gótica.
+Hoy es sede de la Comandancia Militar de Cáceres.</item>
+        <item>La casa de los Solís, o del Sol, es una construcción de estilo gótico, levantada en el siglo XV y posteriormente reformada en el XVI. Lo más destacado de esta casa es su fachada, que consta de una puerta de arco de medio punto con dovelas, sobre la que se alza el escudo de la familia Solís; formado por un sol con rostro humano cuyos rayos son mordidos por cabezas de dragón, todo ello coronado por un yelmo de caballero. Justo encima nos encontramos con un alfiz gótico que da paso a una ventana central. Más arriba, en la parte superior de la torre, se puede apreciar un matacán semicircular con aspilleras en forma de cruz y sujeto por tres ménsulas, a sus laterales, se dejan ver dos ventanas semicirculares con arco rebajado.
+Actualmente se encuentra custodiado por los padres de la Preciosa Sangre.</item>
+        <item>Data del siglo XV y se levanta junto a la Concatedral de Santa María. La fachada principal es de sillería granítica y destaca su portada en arco de medio punto. Sobre ella se encuentra el escudo de la familia Carvajal. De esquina y sobre el lado izquierdo del edificio, nos podemos encontrar con una serie de ventanales sin ningún decoro artístico a destacar. Anexo al palacio se levanta una torre redonda, que se especula que es de origen árabe, de hecho, es el primer elemento que se construye en el del Palacio en siglo XIV, sobre otra torre preexistente.
+Este palacio debe su nombre al linaje de los Carvajal, que llegó a la ciudad en el siglo XV procedente de Plasencia. También es conocido como “la casa quemada”, debido a un incendio que tuvo lugar en el siglo XIX.
+En la actualidad se utiliza como sede del Patronato de turismo y la artesanía de Cáceres, además de ser el lugar donde se sitúa el centro de interpretación de la provincia. Además, es de destacar, que se pueden visitar sus dependencias interiores, así como el patio y el jardín, donde se mantiene una gigantesca higuera de 300 y 400 años de antigüedad.</item>
+        <item>Construido en el siglo XV y principios del XVI. De origen gótico y con fachada plateresca.
+La fachada es de gran interés artístico, consta de una puerta principal de arco de medio punto con dovelas. Por encima, a ambos lados, nos encontramos por una lado el escudo de los Golfines (torres y lises) y por otro el de los Álvarez (León).
+A continuación hay dos ventanas, una de ellas enrejada y la siguiente se trata de una ventana gemela de arco de medio punto, con un mainel de mármol y capitel jónico. Por debajo de ella destaca el escudo de los Golfines, sujeto por dos angelitos, con la inscripción “Fer de Fer” (sin descifrar) a sus pies; y por encima de ella, el escudo de los Reyes Católicos, rematado por una corona real y una cruz. Todos estos elementos están rodeados por un alfil tributado.
+A la derecha de la fachada, se deja ver una torre de planta cuadrada con matacanes sujetos por tres ménsulas en dos de sus lados. Y a su derecha, el sobresaliente de una torre coronada por otro escudo de los Golfines bajo un yelmo, en el que sus pies se puede ver escrito: “Ésta es la casa de los Golfines”, dentro de una rodela sobre dos hachas cruzadas.
+Tanto esta torre como la fachada central, la rematan una crestería plateresca de animales fantásticos.
+La denominación “de abajo” sirve para diferenciarles de la otra rama de la familia, “de arriba”, por estar aquellos situados en la parte baja del recinto amurallado.
+Actualmente es una dependencia privada.</item>
+        <item>Esta Casa y Torre de Sande está incluida en una Casa de Saavedra, perteneciente hoy a los Vizcondes de Roda, que tiene su entrada principal por la calle de los Condes.
+Es gótica, del siglo XIV, reconstruida en el siglo XV.
+Se ve en primer lugar la alta Torre de los Sande, que da la sensación de un enorme poderío:
+• A su mitad, en la derecha, tiene una bonita ventana gótica de dos arcos con mainel; en la izquierda una sencilla ventana en arco de medio punto.
+• Por encima, a derecha e izquierda, dos ventanas iguales, en arco de medio punto con adornos.
+• Mas arriba, el matacán del balcón que está sustentado por nueve grandes ménsulas.
+• A su derecha, vemos una pequeña ventana en arco de espaldilla o dintel.
+Observamos que el tejado está colocado encima de la torre sin ningún elemento soporte en medio, lo que indica que fué reducida su altura y eliminado el almenaje, en cumplimiento de la Orden de “desmoche” que dio la Reina Isabel la Católica.
+De la casa, ocultada en parte por un feo muro, alcanzamos a ver:
+• Una preciosa ventana gótica, igual a la de la mitad de la torre.
+• La cornisa sujeta por ménsulas de piedra con adornos vegetales.
+• Escudos en marmol de Sande (águila) y Ulloa (ajedrezado), pertenecientes al matrimonio de Juan de Sande, 2º. Señor de Valhondo, que vivió en la segunda mitad del siglo XV, y Teresa Álvarez de Ulloa, que fueron los autores de la reconstrucción de la casa, torre y enterramientos de esta familia en San Mateo (según afirma el heraldista Pedro Cordero Alvarado, autor de la Guía Heráldica de Cáceres, basándose en el texto del Memorial de Ulloa).
+Con Alfonso IX vino a la conquista de Cáceres Pedro Fernández Saavedra, cuyos merecimientos eran tales que le otorgó el monarca la tenencia de la villa, y fue el primer Alcaide de su Alcázar, mercedes que declinó en su hijo Fernán Pérez de Saavedra, para seguir él guerreando.</item>
+        <item>La Casa del Águila o de los Sande fue construida en estilo gótico en el siglo XV por la familia Sande, linaje que se asentó en la ciudad a finales de ese siglo.
+Esta casa señorial que perteneció a la familia de los Sande, como así indica el escudo con el águila. En la fachada destaca una preciosa ventana gótica del siglo XV.
+Como muchos de estos palacetes, sus reformas de acondicionamiento se han sucedido en el tiempo.</item>
+    </string-array>
+
+
+
+
+
+
+
+
+
+</resources>

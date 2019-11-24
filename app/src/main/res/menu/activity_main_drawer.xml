@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!--    <group android:checkableBehavior="single">-->
+
+    <item
+        android:id="@+id/nav_puntos_interes"
+        android:icon="@drawable/ic_museum_24px"
+        android:title="Puntos de interés" />
+    <item
+        android:id="@+id/nav_categorias"
+        android:icon="@drawable/ic_category_24px"
+        android:title="Categorías" />
+    <item
+        android:id="@+id/nav_favoritos"
+        android:icon="@drawable/ic_favorite_24px"
+        android:title="Favoritos" />
+    <item
+        android:id="@+id/nav_rutas"
+        android:icon="@drawable/ic_near_me_24px"
+        android:title="Crea tu ruta" />
+
+    <item
+        android:id="@+id/nav_login"
+        android:enabled="false"
+        android:title="Log In" />
+    <item
+        android:id="@+id/nav_ajustes"
+        android:title="Ajustes" />
+
+</menu>

@@ -1,6 +1,7 @@
 package com.example.ccplaces;
 
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -20,6 +21,6 @@ public interface MonumentoDao {
     void deleteAll();
 
     @Query("SELECT * from monumento_table ORDER BY nombre ASC")
-    List<Monumento> getAlphabetizedMonumentos();
+    LiveData<List<Monumento>> getAlphabetizedMonumentos();
 
 }

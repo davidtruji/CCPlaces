@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class PuntoInteresAdapter extends  RecyclerView.Adapter<PuntoInteresAdapter.PuntoInteresViewHolder> {
+
+
 
     private ArrayList<Monumento> mDataset;
 
@@ -33,6 +34,10 @@ public class PuntoInteresAdapter extends  RecyclerView.Adapter<PuntoInteresAdapt
         }
 
 
+    }
+
+    public ArrayList<Monumento> getmDataset() {
+        return mDataset;
     }
 
 

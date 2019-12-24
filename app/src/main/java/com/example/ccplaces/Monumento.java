@@ -20,11 +20,14 @@ public class Monumento {
     private Bitmap foto;
     private Double lat;
     private Double lon;
+    private Boolean fav;
 
 
     public Monumento(String nombre) {
         this.nombre = nombre;
     }
+
+
 
     public Monumento(String nombre, String tipo, String desc, Bitmap foto, Double lat, Double lon) {
         this.nombre = nombre;
@@ -33,6 +36,7 @@ public class Monumento {
         this.foto = foto;
         this.lat = lat;
         this.lon = lon;
+        this.fav = false;
     }
 
     public String getTipo() {
@@ -81,6 +85,14 @@ public class Monumento {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Boolean getFav() {
+        return fav;
+    }
+
+    public void setFav(Boolean fav) {
+        this.fav = fav;
     }
 
 

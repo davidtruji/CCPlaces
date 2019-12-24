@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -45,9 +46,16 @@ public class FavoritosFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        mAdapter = new PuntoInteresAdapter(Datos.getInstance().getFavoritos());
+        mAdapter = new FavAdapter(Datos.getInstance().getFavoritos()) {
+        };
         recyclerView.setAdapter(mAdapter);
-    return v;
+        return v;
     }
+
+
+
+
+
+
 
 }

@@ -7,12 +7,11 @@ public class Datos {
 
 
     private  ArrayList<Monumento> puntosIneres;
-    private  ArrayList<Monumento> favoritos;
     private static Datos datos;
 
     private Datos() {
         puntosIneres=new ArrayList<>();
-        favoritos=new ArrayList<>();
+        //favoritos=new ArrayList<>();
         //System.out.println("Mi nombre es: " + this.nombre);
     }
 
@@ -32,12 +31,18 @@ public class Datos {
         this.puntosIneres = puntosIneres;
     }
 
-    public ArrayList<Monumento> getFavoritos() {
-        return favoritos;
+    public ArrayList<Monumento> getFavoritos(){
+
+        ArrayList<Monumento> favs=new ArrayList<>();
+        for (Monumento m:puntosIneres) {
+            if(m.getFav())
+                favs.add(m);
+        }
+
+        return favs;
     }
 
-    public void setFavoritos(ArrayList<Monumento> favoritos) {
-        this.favoritos = favoritos;
-    }
+
+
 
 }

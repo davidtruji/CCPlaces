@@ -37,18 +37,17 @@ public class MonumentoFragment extends Fragment {
         m=Datos.getInstance().getPuntosIneres().get(getArguments().getInt("index"));
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(m.getNombre());
         ToggleButton toggle = (ToggleButton) v.findViewById(R.id.button_favorite);
+        toggle.setChecked(m.getFav());
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
 
                     if(!Datos.getInstance().getFavoritos().contains(m)){
-                        Datos.getInstance().getFavoritos().add(m);
+                        m.setFav(true);
                     }
 
-
                 } else {
-                    // The toggle is disabled
-                    Datos.getInstance().getFavoritos().remove(m);
+                m.setFav(false);
                 }
             }
         });

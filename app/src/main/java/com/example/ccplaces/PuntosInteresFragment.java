@@ -27,7 +27,7 @@ import java.util.ArrayList;
  */
 public class PuntosInteresFragment extends Fragment {
 
-    private ArrayList<Monumento> listaMonumentos=Datos.getInstance().getPuntosIneres();
+    private ArrayList<Monumento> listaMonumentos= new ArrayList<>();
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -87,7 +87,7 @@ public class PuntosInteresFragment extends Fragment {
     private class GetMonumentos extends AsyncTask<Void, Void, Void> {
 
         ProgressDialog progressDialog;
-        ArrayList<Monumento> puntosIneres=Datos.getInstance().getPuntosIneres();
+//        ArrayList<Monumento> listaMonumentos=Datos.getInstance().getPuntosIneres();
 
 
         @Override

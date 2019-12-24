@@ -10,9 +10,6 @@
         android:name="com.example.ccplaces.PuntosInteresFragment"
         android:label="Puntos de interés"
         tools:layout="@layout/fragment_puntos_interes" >
-        <action
-            android:id="@+id/action_nav_puntos_interes_to_nav_detalle_monumento"
-            app:destination="@id/nav_detalle_monumento" />
     </fragment>
 
     <fragment
@@ -26,9 +23,6 @@
         android:name="com.example.ccplaces.FavoritosFragment"
         android:label="Favoritos"
         tools:layout="@layout/fragment_favoritos" >
-        <action
-            android:id="@+id/action_nav_favoritos_to_nav_detalle_monumento"
-            app:destination="@id/nav_detalle_monumento" />
     </fragment>
 
     <fragment

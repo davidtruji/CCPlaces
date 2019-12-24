@@ -32,28 +32,28 @@ public class MonumentoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_monumento, container, false);
-        tv_desc=v.findViewById(R.id.tv_descripcion);
-        tv_nombre=v.findViewById(R.id.tv_nombre_monumento);
-        m=Datos.getInstance().getPuntosIneres().get(getArguments().getInt("index"));
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(m.getNombre());
-        ToggleButton toggle = (ToggleButton) v.findViewById(R.id.button_favorite);
-        toggle.setChecked(m.getFav());
-        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-
-                    if(!Datos.getInstance().getFavoritos().contains(m)){
-                        m.setFav(true);
-                    }
-
-                } else {
-                m.setFav(false);
-                }
-            }
-        });
-
-        tv_nombre.setText(m.getNombre());
-        tv_desc.setText((new RandomInfo(getContext())).getDescripcion());
+//        tv_desc=v.findViewById(R.id.tv_descripcion);
+//        tv_nombre=v.findViewById(R.id.tv_nombre_monumento);
+//        m=Datos.getInstance().getPuntosIneres().get(getArguments().getInt("index"));
+//        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(m.getNombre());
+//        ToggleButton toggle = (ToggleButton) v.findViewById(R.id.button_favorite);
+//        toggle.setChecked(m.getFav());
+//        toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (isChecked) {
+//
+//                    if(!Datos.getInstance().getFavoritos().contains(m)){
+//                        m.setFav(true);
+//                    }
+//
+//                } else {
+//                m.setFav(false);
+//                }
+//            }
+//        });
+//
+//        tv_nombre.setText(m.getNombre());
+//        tv_desc.setText((new RandomInfo(getContext())).getDescripcion());
         // Inflate the layout for this fragment
         return v;
     }

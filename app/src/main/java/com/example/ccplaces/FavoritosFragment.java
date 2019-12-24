@@ -35,20 +35,20 @@ public class FavoritosFragment extends Fragment {
         View v= inflater.inflate(R.layout.fragment_puntos_interes, container, false);
         //new PuntosInteresFragment.GetMonumentos().execute();
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_pdi);
+       // recyclerView = (RecyclerView) v.findViewById(R.id.recycler_pdi);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true);
+       // recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        layoutManager = new GridLayoutManager(this.getContext(),3);
-        recyclerView.setLayoutManager(layoutManager);
+//        layoutManager = new GridLayoutManager(this.getContext(),3);
+//        recyclerView.setLayoutManager(layoutManager);
 
 
-        mAdapter = new FavAdapter(Datos.getInstance().getFavoritos()) {
-        };
-        recyclerView.setAdapter(mAdapter);
+//        mAdapter = new FavAdapter(Datos.getInstance().getFavoritos()) {
+//        };
+//        recyclerView.setAdapter(mAdapter);
         return v;
     }
 

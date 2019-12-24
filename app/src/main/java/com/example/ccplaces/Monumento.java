@@ -14,7 +14,7 @@ import java.util.Objects;
 //}
 
 
-@Entity(tableName = "monumento")
+@Entity(tableName = "monumento_table")
 public class Monumento {
 
     @PrimaryKey(autoGenerate = true)

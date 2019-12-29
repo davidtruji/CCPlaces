@@ -1,8 +1,10 @@
-package com.example.ccplaces;
+package com.example.ccplaces.Util;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+
+import com.example.ccplaces.R;
 
 import java.util.Random;
 

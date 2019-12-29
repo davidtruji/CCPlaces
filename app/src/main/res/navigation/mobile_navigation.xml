@@ -7,39 +7,39 @@
 
     <fragment
         android:id="@+id/nav_puntos_interes"
-        android:name="com.example.ccplaces.PuntosInteresFragment"
+        android:name="com.example.ccplaces.UI.PuntosInteresFragment"
         android:label="Puntos de interés"
         tools:layout="@layout/fragment_puntos_interes" >
     </fragment>
 
     <fragment
         android:id="@+id/nav_categorias"
-        android:name="com.example.ccplaces.CategoriasFragment"
+        android:name="com.example.ccplaces.UI.CategoriasFragment"
         android:label="Categorías"
         tools:layout="@layout/fragment_categorias" />
 
     <fragment
         android:id="@+id/nav_favoritos"
-        android:name="com.example.ccplaces.FavoritosFragment"
+        android:name="com.example.ccplaces.UI.FavoritosFragment"
         android:label="Favoritos"
         tools:layout="@layout/fragment_favoritos" >
     </fragment>
 
     <fragment
         android:id="@+id/nav_rutas"
-        android:name="com.example.ccplaces.RutaFragment"
+        android:name="com.example.ccplaces.UI.RutaFragment"
         android:label="Crea tu ruta"
         tools:layout="@layout/fragment_ruta" />
 
     <fragment
         android:id="@+id/nav_ajustes"
-        android:name="com.example.ccplaces.AjustesFragment"
+        android:name="com.example.ccplaces.UI.AjustesFragment"
         android:label="Ajustes"
         tools:layout="@layout/fragment_ajustes" />
 
     <fragment
         android:id="@+id/nav_detalle_monumento"
-        android:name="com.example.ccplaces.MonumentoFragment"
+        android:name="com.example.ccplaces.UI.MonumentoFragment"
         android:label="XXXXX monument?¿"
         tools:layout="@layout/fragment_monumento" >
     </fragment>

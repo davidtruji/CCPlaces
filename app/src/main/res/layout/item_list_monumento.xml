@@ -4,8 +4,10 @@
     android:id="@+id/card1"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    card_view:cardCornerRadius="4dp"
     card_view:cardUseCompatPadding="true">
+
+<!--    card_view:cardCornerRadius="4dp"-->
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -14,7 +16,7 @@
         android:src="@drawable/arco_estrella" />
 
     <TextView
-        android:id="@+id/tv_nombre_monummento"
+        android:id="@+id/tv_nombre_monumento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

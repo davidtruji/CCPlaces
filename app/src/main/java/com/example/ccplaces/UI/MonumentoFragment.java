@@ -1,15 +1,16 @@
-package com.example.ccplaces;
+package com.example.ccplaces.UI;
 
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.TextView;
-import android.widget.ToggleButton;
+
+import com.example.ccplaces.Model.Monumento;
+import com.example.ccplaces.R;
 
 
 /**

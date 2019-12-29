@@ -1,6 +1,8 @@
-package com.example.ccplaces;
+package com.example.ccplaces.Util;
 
 import android.util.Log;
+
+import com.example.ccplaces.Model.Monumento;
 
 import org.json.JSONArray;
 import org.json.JSONException;

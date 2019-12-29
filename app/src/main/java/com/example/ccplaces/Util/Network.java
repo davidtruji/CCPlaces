@@ -1,4 +1,4 @@
-package com.example.ccplaces;
+package com.example.ccplaces.Util;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

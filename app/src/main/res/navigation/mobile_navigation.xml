@@ -20,7 +20,11 @@
         android:id="@+id/nav_categorias"
         android:name="com.example.ccplaces.UI.CategoriasFragment"
         android:label="Categorías"
-        tools:layout="@layout/fragment_categorias" />
+        tools:layout="@layout/fragment_categorias" >
+        <action
+            android:id="@+id/action_nav_categorias_to_categoria"
+            app:destination="@id/categoria" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_favoritos"
@@ -46,9 +50,18 @@
 
     <fragment
         android:id="@+id/nav_detalle_monumento"
-        android:name="com.example.ccplaces.UI.MonumentoFragment"
-        android:label="XXXXX monument?¿"
+        android:name="com.example.ccplaces.UI.MonumentoDetalleFragment"
+        android:label="Default"
         tools:layout="@layout/fragment_monumento" >
+    </fragment>
+    <fragment
+        android:id="@+id/categoria"
+        android:name="com.example.ccplaces.UI.CategoriaFragment"
+        android:label="fragment_categoria"
+        tools:layout="@layout/fragment_categoria" >
+        <action
+            android:id="@+id/action_categoria_to_nav_detalle_monumento"
+            app:destination="@id/nav_detalle_monumento" />
     </fragment>
 
 

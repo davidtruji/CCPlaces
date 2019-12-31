@@ -26,10 +26,5 @@ public class FavoritosViewModel extends AndroidViewModel {
         return mMonumentosFavoritos;
     }
 
-//    public void updateFav(Boolean fav,String nom){
-//        mRepository.updateFav(fav,nom);
-//    }
-
-    //public void insert(Monumento m) { mRepository.insert(m); }
 
 }

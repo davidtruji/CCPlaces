@@ -29,14 +29,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MonumentoFragment extends Fragment {
+public class MonumentoDetalleFragment extends Fragment {
 
 
     private String nombre="",descripcion="";
     private TextView tv_nombre, tv_desc;
     private Monumento m;
 
-    public MonumentoFragment() {
+    public MonumentoDetalleFragment() {
         // Required empty public constructor
 
     }
@@ -52,13 +52,6 @@ public class MonumentoFragment extends Fragment {
         SharedViewModel model =  new ViewModelProvider(getActivity()).get(SharedViewModel.class);
         m=model.getSelected().getValue();
 
-//        MonumentoDetalleViewModel detalleViewModel = new ViewModelProvider(getActivity()).get(MonumentoDetalleViewModel.class);
-//        detalleViewModel.getMonumento().observe(getViewLifecycleOwner(), new Observer<Monumento>() {
-//            @Override
-//            public void onChanged(@Nullable final Monumento m) {
-//
-//            }
-//        });
 
         MonumentoDetalleViewModel monumentoDetalleViewModel = new ViewModelProvider(this).get(MonumentoDetalleViewModel.class);
         monumentoDetalleViewModel.setMonumento(model.getSelected());
@@ -78,8 +71,6 @@ public class MonumentoFragment extends Fragment {
 
                 m.setFavorito(isChecked);
                 monumentoDetalleViewModel.updateMonumento(m);
-
-
 
             }
 

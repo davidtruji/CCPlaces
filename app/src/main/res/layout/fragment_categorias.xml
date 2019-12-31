@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    >
 
 
     <ScrollView
@@ -19,7 +20,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_iglesia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -27,17 +28,10 @@
                 android:textAlignment="viewStart"
                 android:textSize="50sp" />
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Catedral"
-                android:textAlignment="viewStart"
-                android:textSize="50sp" />
+
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tv_Concatedral"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -46,7 +40,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_ermita"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -55,7 +49,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/tv_convento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -64,7 +58,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_torre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -73,7 +67,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/tv_casa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -82,7 +76,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tv_monumento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,7 +85,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_palacio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -100,7 +94,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_escultura"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -109,7 +103,7 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tv_eSingular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -118,20 +112,11 @@
                 android:textSize="50sp" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tv_crucero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Crucero"
-                android:textAlignment="viewStart"
-                android:textSize="50sp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Excavación"
                 android:textAlignment="viewStart"
                 android:textSize="50sp" />
 

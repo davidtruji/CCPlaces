@@ -30,11 +30,13 @@ public interface MonumentoDao {
     @Query("SELECT * from monumento_table WHERE favorito=1 ORDER BY nombre ASC")
     LiveData<List<Monumento>> getFavoritos();
 
+    @Query("SELECT * from monumento_table WHERE tipo=:categoria ORDER BY nombre ASC")
+    LiveData<List<Monumento>> getMonumentosCategoria(String categoria);
+
     @Update
     public void updateMonumento(Monumento monumento);
 
-//    @Query("SELECT * from monumento_table WHERE nombre=:mNombre")
-//    LiveData<Monumento> getMonumento(String mNombre);
+
 
     @Delete
     public void deleteMonumentos(Monumento... monumentos);

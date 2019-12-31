@@ -7,9 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.Navigation;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +15,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.example.ccplaces.Model.Monumento;
 import com.example.ccplaces.Util.Network;
@@ -44,7 +41,7 @@ public class PuntosInteresFragment extends Fragment {
     private MonumentoViewModel monumentoViewModel;
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
-    private PuntoInteresAdapter mAdapter;
+    private ListaMonumentosAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
     private SharedViewModel model;
 
@@ -59,8 +56,6 @@ public class PuntosInteresFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_puntos_interes, container, false);
-        // new GetMonumentos().execute();
-        //monumentoViewModel = ViewModelProviders.of(this, viewModelFactory).get( monumentoViewModel.class);
 
         fab= v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +81,7 @@ public class PuntosInteresFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
 
-        mAdapter = new PuntoInteresAdapter(this.getContext());
+        mAdapter = new ListaMonumentosAdapter(this.getContext());
 
         recyclerView.setAdapter(mAdapter);
 
@@ -106,7 +101,6 @@ public class PuntosInteresFragment extends Fragment {
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-//                        Toast.makeText(getContext(),"tocao "+position,Toast.LENGTH_SHORT).show();
                         model.select(monumentoViewModel.getmAllMonumentos().getValue().get(position));
                         Navigation.findNavController(view).navigate(R.id.action_nav_puntos_interes_to_nav_detalle_monumento);
                     }
@@ -159,9 +153,6 @@ public class PuntosInteresFragment extends Fragment {
             super.onPostExecute(aVoid);
             for(Monumento m: listaMonumentos)
                 monumentoViewModel.insert(m);
-
-            for(Monumento m: monumentoViewModel.getmAllMonumentos().getValue())
-                Log.i(TAG,m.toString());
 
         }
     }

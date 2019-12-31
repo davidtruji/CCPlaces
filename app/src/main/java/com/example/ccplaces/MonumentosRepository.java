@@ -34,23 +34,19 @@ public class MonumentosRepository {
         return mAllMonumentos;
     }
 
-//    public LiveData<List<Monumento>> getMonumento(String idNombre){
-//        return mMonumentoDao.getMonumento(idNombre);
-//    }
 
     public LiveData<List<Monumento>> getmMonumentosFavoritos() {
         return mMonumentosFavoritos;
     }
 
-//    public void updateFav(Boolean fav,String nom){
-//        mMonumentoDao.setFav(fav,nom);
-//    }
+    public LiveData<List<Monumento>> getMonumetosCat(String cat) {
+        return mMonumentoDao.getMonumentosCategoria(cat);
+    }
 
     public void updateMonumento(Monumento m){
         MonumentosRoomDataBase.databaseWriteExecutor.execute(() -> {
             mMonumentoDao.updateMonumento(m);
         });
-
     }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures

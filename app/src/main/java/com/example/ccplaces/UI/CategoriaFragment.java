@@ -4,6 +4,7 @@ package com.example.ccplaces.UI;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -17,8 +18,11 @@ import android.view.ViewGroup;
 
 import com.example.ccplaces.Model.Monumento;
 import com.example.ccplaces.R;
-import com.example.ccplaces.ViewModel.FavoritosViewModel;
+import com.example.ccplaces.ViewModel.CategoriaViewModel;
+import com.example.ccplaces.ViewModel.MonumentoViewModel;
 import com.example.ccplaces.ViewModel.SharedViewModel;
+import com.example.ccplaces.ViewModel.ViewModelFactory;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -26,15 +30,14 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FavoritosFragment extends Fragment {
+public class CategoriaFragment extends Fragment {
+
 
     private RecyclerView recyclerView;
     private ListaMonumentosAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private SharedViewModel model;
-    private FavoritosViewModel favoritosViewModel;
 
-    public FavoritosFragment() {
+    public CategoriaFragment() {
         // Required empty public constructor
     }
 
@@ -42,10 +45,14 @@ public class FavoritosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_favoritos, container, false);
+        View v=inflater.inflate(R.layout.fragment_categoria, container, false);
+        SharedViewModel model =  new ViewModelProvider(getActivity()).get(SharedViewModel.class);
+        String cat=model.getCategoria().getValue();
 
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_fav);
+        if(cat!=null)
+            ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(cat);
+
+        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_cat);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -64,10 +71,10 @@ public class FavoritosFragment extends Fragment {
 
         recyclerView.setAdapter(mAdapter);
 
-        favoritosViewModel = new ViewModelProvider(this).get(FavoritosViewModel.class);
+        CategoriaViewModel catViewModel = new ViewModelProvider(this,new ViewModelFactory(getActivity().getApplication(),cat)).get(CategoriaViewModel.class);
 
 
-        favoritosViewModel.getmMonumentosFavoritos().observe(getViewLifecycleOwner(), new Observer<List<Monumento>>() {
+        catViewModel.getmMonumentosCat().observe(getViewLifecycleOwner(), new Observer<List<Monumento>>() {
             @Override
             public void onChanged(@Nullable final List<Monumento> monumentos) {
                 // Update the cached copy of the words in the adapter.
@@ -75,14 +82,12 @@ public class FavoritosFragment extends Fragment {
             }
         });
 
-        model = new ViewModelProvider(getActivity()).get(SharedViewModel.class);
 
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
-//                        Toast.makeText(getContext(),"tocao "+position,Toast.LENGTH_SHORT).show();
-                        model.select(favoritosViewModel.getmMonumentosFavoritos().getValue().get(position));
-                        Navigation.findNavController(view).navigate(R.id.action_nav_favoritos_to_nav_detalle_monumento);
+                        model.select(catViewModel.getmMonumentosCat().getValue().get(position));
+                        Navigation.findNavController(view).navigate(R.id.action_categoria_to_nav_detalle_monumento);
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
@@ -92,17 +97,8 @@ public class FavoritosFragment extends Fragment {
         );
 
 
-
-
-
-
-        return v;
+        // Inflate the layout for this fragment
+        return  v;
     }
-
-
-
-
-
-
 
 }

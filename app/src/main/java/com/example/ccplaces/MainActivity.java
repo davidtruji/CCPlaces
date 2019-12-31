@@ -2,6 +2,8 @@ package com.example.ccplaces;
 
 
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    public void mostrarIglesias(View view){
 
+    }
 
 }

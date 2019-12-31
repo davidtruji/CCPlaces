@@ -17,28 +17,29 @@ import java.util.Objects;
 @Entity(tableName = "monumento_table")
 public class Monumento {
 
-//    (autoGenerate = true)
-//    private int id;
+
     @PrimaryKey
     @NonNull
     private String nombre;
 
     private Boolean favorito;
 
+    private String tipo;
 
 
-    public Monumento(String nombre){
+    public Monumento(String nombre,String tipo){
         this.nombre=nombre;
         favorito=false;
+        this.tipo=tipo;
     }
 
-//    public int getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
     public void setNombre(@NonNull String nombre) {
         this.nombre = nombre;
@@ -62,7 +63,6 @@ public class Monumento {
         return nombre;
     }
 
-//    private String tipo;
 //    private String desc;
 //    private Bitmap foto;
 //    private Double lat;

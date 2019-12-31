@@ -1,14 +1,11 @@
 package com.example.ccplaces.UI;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ccplaces.Model.Monumento;
@@ -16,7 +13,7 @@ import com.example.ccplaces.R;
 
 import java.util.List;
 
-public class PuntoInteresAdapter extends  RecyclerView.Adapter<PuntoInteresAdapter.PuntoInteresViewHolder> {
+public class ListaMonumentosAdapter extends  RecyclerView.Adapter<ListaMonumentosAdapter.PuntoInteresViewHolder> {
 
 
 
@@ -38,7 +35,7 @@ public class PuntoInteresAdapter extends  RecyclerView.Adapter<PuntoInteresAdapt
     private final LayoutInflater mInflater;
     private List<Monumento> mMonumentos; // Cached copy of words
 
-    PuntoInteresAdapter(Context context) { mInflater = LayoutInflater.from(context); }
+    ListaMonumentosAdapter(Context context) { mInflater = LayoutInflater.from(context); }
 
     @Override
     public PuntoInteresViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

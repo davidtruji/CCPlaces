@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,11 +17,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import com.example.ccplaces.Model.Monumento;
 import com.example.ccplaces.Util.Network;
 import com.example.ccplaces.Util.OpenDataAPI;
 import com.example.ccplaces.ViewModel.MonumentoViewModel;
 import com.example.ccplaces.R;
+import com.example.ccplaces.ViewModel.SharedViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONObject;
 import java.util.ArrayList;
@@ -36,16 +41,12 @@ public class PuntosInteresFragment extends Fragment {
 
 
 
-
-    private ArrayList<Monumento> listaMonumentos= new ArrayList<>();
-    //    private RecyclerView recyclerView;
-//    private RecyclerView.Adapter mAdapter;
-//    private RecyclerView.LayoutManager layoutManager;
     private MonumentoViewModel monumentoViewModel;
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private PuntoInteresAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private SharedViewModel model;
 
 
     public PuntosInteresFragment() {
@@ -69,13 +70,6 @@ public class PuntosInteresFragment extends Fragment {
             }
         });
 
-//        RecyclerView recyclerView = v.findViewById(R.id.recycler_pdi);
-//        final PuntoInteresAdapter adapter = new PuntoInteresAdapter(this.getContext());
-//        recyclerView.setAdapter(adapter);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(),3));
-
-
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_pdi);
 
@@ -85,12 +79,16 @@ public class PuntosInteresFragment extends Fragment {
 
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this.getContext());
+        //Para usar un Grid Layout de 3 columnas descomentar la instruccion de abajo y comentar la de arriba
+//        recyclerView.setLayoutManager(new GridLayoutManager(this.getContext(),3));
+
+
         recyclerView.setLayoutManager(layoutManager);
 
 
         mAdapter = new PuntoInteresAdapter(this.getContext());
-        recyclerView.setAdapter(mAdapter);
 
+        recyclerView.setAdapter(mAdapter);
 
         monumentoViewModel = new ViewModelProvider(this).get(MonumentoViewModel.class);
 
@@ -99,9 +97,25 @@ public class PuntosInteresFragment extends Fragment {
             @Override
             public void onChanged(@Nullable final List<Monumento> monumentos) {
                 // Update the cached copy of the words in the adapter.
-                mAdapter.setWords(monumentos);
+                mAdapter.setMonumentos(monumentos);
             }
         });
+
+        model = new ViewModelProvider(getActivity()).get(SharedViewModel.class);
+
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+//                        Toast.makeText(getContext(),"tocao "+position,Toast.LENGTH_SHORT).show();
+                        model.select(monumentoViewModel.getmAllMonumentos().getValue().get(position));
+                        Navigation.findNavController(view).navigate(R.id.action_nav_puntos_interes_to_nav_detalle_monumento);
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
         return v;
     }
@@ -140,16 +154,14 @@ public class PuntosInteresFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Void aVoid) {
-//MonumentosRoomDataBase db = MonumentosRoomDataBase.getDatabase(MainActivity.this);
-            //mAdapter = new PuntoInteresAdapter(listaMonumentos);
-            // recyclerView.setAdapter(mAdapter);
+
             progressDialog.dismiss();
             super.onPostExecute(aVoid);
             for(Monumento m: listaMonumentos)
                 monumentoViewModel.insert(m);
 
             for(Monumento m: monumentoViewModel.getmAllMonumentos().getValue())
-            Log.i(TAG,m.toString());
+                Log.i(TAG,m.toString());
 
         }
     }

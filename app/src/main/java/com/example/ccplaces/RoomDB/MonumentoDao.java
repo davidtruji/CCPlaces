@@ -3,9 +3,11 @@ package com.example.ccplaces.RoomDB;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.ccplaces.Model.Monumento;
 
@@ -23,6 +25,20 @@ public interface MonumentoDao {
     void deleteAll();
 
     @Query("SELECT * from monumento_table ORDER BY nombre ASC")
-    LiveData<List<Monumento>> getAlphabetizedMonumentos();
+    LiveData<List<Monumento>> getMonumentos();
+
+    @Query("SELECT * from monumento_table WHERE favorito=1 ORDER BY nombre ASC")
+    LiveData<List<Monumento>> getFavoritos();
+
+    @Update
+    public void updateMonumento(Monumento monumento);
+
+//    @Query("SELECT * from monumento_table WHERE nombre=:mNombre")
+//    LiveData<Monumento> getMonumento(String mNombre);
+
+    @Delete
+    public void deleteMonumentos(Monumento... monumentos);
+
+
 
 }

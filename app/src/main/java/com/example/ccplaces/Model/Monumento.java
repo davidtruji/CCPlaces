@@ -17,9 +17,9 @@ import java.util.Objects;
 @Entity(tableName = "monumento_table")
 public class Monumento {
 
-    @PrimaryKey(autoGenerate = true)
-    private int id;
-
+//    (autoGenerate = true)
+//    private int id;
+    @PrimaryKey
     @NonNull
     private String nombre;
 
@@ -32,13 +32,13 @@ public class Monumento {
         favorito=false;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public void setNombre(@NonNull String nombre) {
         this.nombre = nombre;

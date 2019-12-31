@@ -15,6 +15,7 @@ public class MonumentosRepository {
 
     private MonumentoDao mMonumentoDao;
     private LiveData<List<Monumento>> mAllMonumentos;
+    private LiveData<List<Monumento>> mMonumentosFavoritos;
 
     // Note that in order to unit test the WordRepository, you have to remove the Application
     // dependency. This adds complexity and much more code, and this sample is not about testing.
@@ -23,13 +24,33 @@ public class MonumentosRepository {
     public MonumentosRepository(Application application) {
         MonumentosRoomDataBase db = MonumentosRoomDataBase.getDatabase(application);
         mMonumentoDao = db.MonumentoDao();
-        mAllMonumentos = mMonumentoDao.getAlphabetizedMonumentos();
+        mAllMonumentos = mMonumentoDao.getMonumentos();
+        mMonumentosFavoritos = mMonumentoDao.getFavoritos();
     }
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-   public LiveData<List<Monumento>> getAllMonumentos() {
+    public LiveData<List<Monumento>> getAllMonumentos() {
         return mAllMonumentos;
+    }
+
+//    public LiveData<List<Monumento>> getMonumento(String idNombre){
+//        return mMonumentoDao.getMonumento(idNombre);
+//    }
+
+    public LiveData<List<Monumento>> getmMonumentosFavoritos() {
+        return mMonumentosFavoritos;
+    }
+
+//    public void updateFav(Boolean fav,String nom){
+//        mMonumentoDao.setFav(fav,nom);
+//    }
+
+    public void updateMonumento(Monumento m){
+        MonumentosRoomDataBase.databaseWriteExecutor.execute(() -> {
+            mMonumentoDao.updateMonumento(m);
+        });
+
     }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures

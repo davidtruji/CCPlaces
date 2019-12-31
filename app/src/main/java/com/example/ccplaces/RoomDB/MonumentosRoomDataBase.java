@@ -48,12 +48,12 @@ public abstract class MonumentosRoomDataBase extends RoomDatabase {
                 // Populate the database in the background.
                 // If you want to start with more words, just add them.
                 MonumentoDao dao = INSTANCE.MonumentoDao();
-                dao.deleteAll();
+               // dao.deleteAll();
 
                 //TODO: Añadidos monumentos para ver si la lista se muestra correctamente
                 // se pueden eliminar después
-                dao.insert(new Monumento("Monumento de Incognito no:1"));
-                dao.insert(new Monumento("Monumento de Incognito no:2"));
+               // dao.insert(new Monumento("Monumento de Incognito no:1"));
+               // dao.insert(new Monumento("Monumento de Incognito no:2"));
             });
         }
     };

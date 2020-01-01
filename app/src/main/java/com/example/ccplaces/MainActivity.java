@@ -1,6 +1,7 @@
 package com.example.ccplaces;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 
@@ -54,10 +55,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void mostrarIglesias(View view){
-
     }
 
 }

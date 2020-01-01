@@ -1,9 +1,12 @@
 package com.example.ccplaces.UI;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,17 +22,14 @@ public class ListaMonumentosAdapter extends  RecyclerView.Adapter<ListaMonumento
 
      class PuntoInteresViewHolder extends RecyclerView.ViewHolder {
         private final TextView nombreMonumento;
+        private final ImageView imgMonumento;
 
         private PuntoInteresViewHolder(View itemView) {
             super(itemView);
             nombreMonumento = itemView.findViewById(R.id.tv_nombre_monumento);
-//            itemView.setOnClickListener(this);
+            imgMonumento=itemView.findViewById(R.id.imgMonumento);
         }
 
-//        @Override
-//        public void onClick(View v) {
-//            onItemClick(v,getAdapterPosition());
-//        }
     }
 
     private final LayoutInflater mInflater;
@@ -48,6 +48,7 @@ public class ListaMonumentosAdapter extends  RecyclerView.Adapter<ListaMonumento
         if (mMonumentos != null) {
             Monumento current = mMonumentos.get(position);
             holder.nombreMonumento.setText(current.getNombre());
+            holder.imgMonumento.setImageResource(current.getImgId());
         } else {
             // Covers the case of data not being ready yet.
             holder.nombreMonumento.setText("No Monumento");
@@ -67,15 +68,5 @@ public class ListaMonumentosAdapter extends  RecyclerView.Adapter<ListaMonumento
             return mMonumentos.size();
         else return 0;
     }
-
-
-//    public void onItemClick(View v,int i){
-//        Toast.makeText(v.getContext(),"Click: "+mMonumentos.get(i).toString(), Toast.LENGTH_SHORT).show();
-//        Bundle bundle = new Bundle();
-//        bundle.putInt("index",i);
-//        Navigation.findNavController(v).navigate(R.id.action_nav_puntos_interes_to_nav_detalle_monumento, bundle);
-//
-//    }
-
 
 }

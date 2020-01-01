@@ -138,7 +138,7 @@ public class PuntosInteresFragment extends Fragment {
 
             try{
                 JSONObject jsonObject = Network.getJSONObjectFromURL(Network.URL_OPENDATA);
-                OpenDataAPI.getMonumentosFromJSON(jsonObject,listaMonumentos);
+                OpenDataAPI.getMonumentosFromJSON(jsonObject,listaMonumentos,getContext());
 
             }catch (Exception e){
                 e.printStackTrace();

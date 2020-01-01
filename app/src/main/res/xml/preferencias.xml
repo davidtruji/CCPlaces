@@ -1,0 +1,20 @@
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="switch_preference_1"
+        android:title="Switch preference" />
+
+    <Preference
+        android:title="Preferencias Random"
+        android:summary="Opciones aleatorias de la aplicación"
+        />
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="check_box_preference_1"
+        android:title="Check box preference" />
+
+</PreferenceScreen>

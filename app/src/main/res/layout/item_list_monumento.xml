@@ -6,14 +6,13 @@
     android:layout_height="200dp"
     card_view:cardUseCompatPadding="true">
 
-<!--    card_view:cardCornerRadius="4dp"-->
-
 
     <ImageView
+        android:id="@+id/imgMonumento"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/arco_estrella" />
+        android:src="@drawable/m1" />
 
     <TextView
         android:id="@+id/tv_nombre_monumento"
@@ -24,7 +23,7 @@
         android:padding="10dp"
         android:text="Aaaaaaaaa"
         android:textColor="#ffe3e3e3"
-        android:textSize="8sp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
 </androidx.cardview.widget.CardView>

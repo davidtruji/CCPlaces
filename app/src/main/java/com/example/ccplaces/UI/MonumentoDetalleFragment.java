@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -34,6 +35,7 @@ public class MonumentoDetalleFragment extends Fragment {
 
     private String nombre="",descripcion="";
     private TextView tv_nombre, tv_desc;
+    private ImageView img;
     private Monumento m;
 
     public MonumentoDetalleFragment() {
@@ -46,8 +48,9 @@ public class MonumentoDetalleFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_monumento, container, false);
 
-//        tv_desc=v.findViewById(R.id.tv_descripcion);
+        tv_desc=v.findViewById(R.id.tv_descripcion);
         tv_nombre=v.findViewById(R.id.tv_detalles_nombre);
+        img=v.findViewById(R.id.fotoMonumento);
 
         SharedViewModel model =  new ViewModelProvider(getActivity()).get(SharedViewModel.class);
         m=model.getSelected().getValue();
@@ -55,35 +58,26 @@ public class MonumentoDetalleFragment extends Fragment {
 
         MonumentoDetalleViewModel monumentoDetalleViewModel = new ViewModelProvider(this).get(MonumentoDetalleViewModel.class);
         monumentoDetalleViewModel.setMonumento(model.getSelected());
-//        MonumentoDetalleViewModel monumentoDetalleViewModel = ViewModelProviders.of(this, new ViewModelFactory(getActivity().getApplication(), m.getNombre())).get(MonumentoDetalleViewModel.class);
-
-        // Log.i("DEBUG!!!",monumentoDetalleViewModel.getMonumento().getValue().get(0).toString());
 
 
         if(m!=null)
             ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(m.getNombre());
 
+        tv_nombre.setText(m.getNombre());
+        tv_desc.setText(m.getDesc());
+        img.setImageResource(m.getImgId());
 
         ToggleButton toggle = (ToggleButton) v.findViewById(R.id.button_favorite);
         toggle.setChecked(m.getFavorito());
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 m.setFavorito(isChecked);
                 monumentoDetalleViewModel.updateMonumento(m);
-
             }
-
         });
 
 
 
-
-
-
-        tv_nombre.setText(m.getNombre());
-//        tv_desc.setText((new RandomInfo(getContext())).getDescripcion());
-        // Inflate the layout for this fragment
         return v;
     }
 

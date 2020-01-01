@@ -3,6 +3,7 @@ package com.example.ccplaces.Util;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.widget.ImageView;
 
 import com.example.ccplaces.R;
 
@@ -28,8 +29,15 @@ public class RandomInfo {
         return descs[randomIndex];
     }
 
-    public Bitmap getFoto(){
-        return null;
+    public int getFoto() {
+        Resources res = context.getResources();
+        int[] images = {R.drawable.m1,R.drawable.m2,R.drawable.m3,
+                R.drawable.m4,R.drawable.m5,R.drawable.m6,R.drawable.m7,R.drawable.m8,R.drawable.m9,
+                R.drawable.m10,R.drawable.m11,R.drawable.m12,R.drawable.m13,R.drawable.m14,R.drawable.m15,
+                R.drawable.m16,R.drawable.m17,R.drawable.m18,R.drawable.m19,R.drawable.m20,R.drawable.m21,R.drawable.m22,R.drawable.m23};
+        Random r = new Random();
+        int randomIndex = r.nextInt(images.length);
+        return images[randomIndex];
     }
 
 

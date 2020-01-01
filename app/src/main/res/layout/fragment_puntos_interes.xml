@@ -12,12 +12,8 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:theme="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="@+id/recycler_pdi"
         app:layout_constraintEnd_toEndOf="@+id/recycler_pdi"
-
-        app:rippleColor="#B60000"
         app:srcCompat="@drawable/ic_cloud_download_black_24dp" />
 
     <androidx.recyclerview.widget.RecyclerView

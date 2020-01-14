@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Caceres Places</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_send">Send</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_slideshow">Slidehow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Caceres Places</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="preferences_languages_english_title">English</string>
+    <string name="preferences_languages_english_value">English Values</string>
+    <string name="preferences_languages_spanish_title">Spanish</string>
+    <string name="preferences_languages_spanish_value">Values Spanish</string>
+</resources>

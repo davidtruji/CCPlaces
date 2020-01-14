@@ -1,12 +1,19 @@
 package com.example.ccplaces;
 import android.app.Application;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
 import com.example.ccplaces.Model.Monumento;
 import com.example.ccplaces.RoomDB.MonumentoDao;
 import com.example.ccplaces.RoomDB.MonumentosRoomDataBase;
+import com.example.ccplaces.Util.Network;
+import com.example.ccplaces.Util.OpenDataAPI;
 
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -26,6 +33,8 @@ public class MonumentosRepository {
         mMonumentoDao = db.MonumentoDao();
         mAllMonumentos = mMonumentoDao.getMonumentos();
         mMonumentosFavoritos = mMonumentoDao.getFavoritos();
+
+
     }
 
     // Room executes all queries on a separate thread.
@@ -57,4 +66,9 @@ public class MonumentosRepository {
         });
     }
 
+
+
+
 }
+
+

@@ -36,8 +36,6 @@ public interface MonumentoDao {
     @Update
     public void updateMonumento(Monumento monumento);
 
-
-
     @Delete
     public void deleteMonumentos(Monumento... monumentos);
 

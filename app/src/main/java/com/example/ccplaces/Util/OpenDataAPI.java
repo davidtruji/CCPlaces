@@ -18,13 +18,13 @@ public class OpenDataAPI {
 
     private final static String TAG="OpenDataAPI";
 
-    public static void getMonumentosFromJSON(JSONObject result, ArrayList<Monumento> monumentoArrayList,Context context){
+    public static void getMonumentosFromJSON(JSONObject result, ArrayList<Monumento> monumentoArrayList){
 
         JSONObject jsonObject;
         JSONArray jsonArray;
         String nombreMonumento,desc,tipo,lat,lon;
         int imgId;
-        RandomInfo ri=new RandomInfo(context);
+       RandomInfo ri=new RandomInfo();
 
         try {
             jsonObject = result.getJSONObject("results");

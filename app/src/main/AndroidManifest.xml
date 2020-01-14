@@ -3,14 +3,16 @@
     package="com.example.ccplaces">
 
     <uses-permission android:name="android.permission.INTERNET" />
-        <application
+    <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@drawable/launcher_icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/launcher_icon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:name=".Util.RandomInfo">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

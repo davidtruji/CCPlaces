@@ -5,8 +5,6 @@ import android.app.Application;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ccplaces.ViewModel.CategoriaViewModel;
-
 public class ViewModelFactory implements ViewModelProvider.Factory {
     private Application mApplication;
     private String mParam;

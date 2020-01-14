@@ -1,20 +1,19 @@
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="lenguage_preferences"
+        android:title="Idioma"
+        android:icon="@drawable/ic_language_black_24dp"
+        android:summary="%s"
+        android:defaultValue="@string/preferences_languages_spanish_value"
+        android:dialogIcon="@drawable/ic_language_red_24dp"
+        android:entries="@array/language_titles"
+        android:entryValues="@array/language_values"/>
     <SwitchPreference
         android:defaultValue="false"
         android:key="switch_preference_1"
-        android:title="Switch preference" />
-
-    <Preference
-        android:title="Preferencias Random"
-        android:summary="Opciones aleatorias de la aplicación"
-        />
-
-    <CheckBoxPreference
-        android:defaultValue="false"
-        android:key="check_box_preference_1"
-        android:title="Check box preference" />
+        android:title="Modo Noche"
+        android:icon="@drawable/ic_brightness_3_black_24dp"
+        android:summary="Activa esta opción para una vista más suave en ambientes oscuros"/>
 
 </PreferenceScreen>

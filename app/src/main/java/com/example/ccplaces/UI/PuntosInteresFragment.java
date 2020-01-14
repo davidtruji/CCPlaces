@@ -39,7 +39,6 @@ public class PuntosInteresFragment extends Fragment {
 
 
     private MonumentoViewModel monumentoViewModel;
-    private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private ListaMonumentosAdapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -56,14 +55,6 @@ public class PuntosInteresFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_puntos_interes, container, false);
-
-        fab= v.findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new GetMonumentos().execute();
-            }
-        });
 
 
         recyclerView = (RecyclerView) v.findViewById(R.id.recycler_pdi);
@@ -113,57 +104,6 @@ public class PuntosInteresFragment extends Fragment {
 
         return v;
     }
-
-
-
-
-
-
-    private class GetMonumentos extends AsyncTask<Void, Void, Void> {
-
-        ProgressDialog progressDialog;
-        ArrayList<Monumento> listaMonumentos=new ArrayList<Monumento>();
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            listaMonumentos.clear();
-            progressDialog = ProgressDialog.show(getContext(),
-                    "Descargando espere...",
-                    "Datos proporcionados por OpenDataAPI");
-        }
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-
-            try{
-                JSONObject jsonObject = Network.getJSONObjectFromURL(Network.URL_OPENDATA);
-                OpenDataAPI.getMonumentosFromJSON(jsonObject,listaMonumentos,getContext());
-
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void aVoid) {
-
-            progressDialog.dismiss();
-            super.onPostExecute(aVoid);
-            for(Monumento m: listaMonumentos)
-                monumentoViewModel.insert(m);
-
-        }
-    }
-
-
-
-
-
-
-
-
 
 
 

@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import java.util.Objects;
@@ -27,8 +28,12 @@ public class Monumento {
     private String desc;
     private Integer imgId;
 
+    @Ignore
+    public Monumento() {
 
-    public Monumento(String nombre,String tipo,String desc,Integer imgId){
+    }
+
+    public Monumento(String nombre, String tipo, String desc, Integer imgId){
         this.nombre=nombre;
         favorito=false;
         this.tipo=tipo;

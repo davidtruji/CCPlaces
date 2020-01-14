@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_titles">
+        <item>@string/preferences_languages_spanish_title</item>
+        <item>@string/preferences_languages_english_title</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>@string/preferences_languages_spanish_value</item>
+        <item>@string/preferences_languages_english_value</item>
+    </string-array>
+</resources>
